@@ -7,14 +7,139 @@ h1{
   line-height:65px;
 }
 
+.face{
+
+  z-index: 10;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #36454F ;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.face::before{
+  content: '';
+  position: absolute;
+  top: 180px;
+  width: 150px;
+  height: 70px;
+  background: black;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  transition: 0.5s;
+}
+
+.face:hover::before{
+  content: '';
+  position: absolute;
+  top: 210px;
+  width: 150px;
+  height: 20px;
+  background: black;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: 0.5s;
+}
+
+.eyes{
+  position: relative;
+  top: -40px;
+  display: flex;
+}
+
+.eye{
+  position: relative;
+  width: 80px;
+  height:80px;
+  display: inline-block;
+  background-color: white;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+
+.eye::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #20486A;
+  border-radius: 50%;
+}
+
 body {
-  background-color: aliceblue;
+  overflow-x: none;
+  background-color: #20486A;
   font-family: Poppins;
   color: #36454F;
   font-size: 1em;
   line-height:22px;
-  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
 }
+
+html{
+  overflow-x: hidden;
+
+}
+
+
+
+
+
+
+
+.background{
+  background-color:transparent;
+  height: 100%;
+  width:100%;
+  padding-top: 50px;
+  display: flex;
+  z-index: -4;
+}
+
+.bubble{
+  position: relative;
+  width: 0.00001px;
+  height: 0.00001px;
+  background: white;
+  margin: 0 80px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 107px 63px rgba(255,255,255,0.85);
+  -webkit-box-shadow: 2px 2px 107px 63px rgba(255,255,255,0.85);
+  -moz-box-shadow: 2px 2px 107px 63px rgba(255,255,255,0.85);
+    z-index: -3;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(50s/var(--i));
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
+
+}
+
+.container{
+  z-index: 1;
+}
+
 
 #introduction{
   margin-bottom:40px;
@@ -34,6 +159,7 @@ body {
 }
 
 .card{
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -79,7 +205,7 @@ ul{
 @media (max-width: 960px) {
   /* For a screen > 960px, this CSS will be read */
   .card{
-    width:50%;
+    width:70%;
   }
 
 }
@@ -87,7 +213,7 @@ ul{
 @media (max-width: 2000px) {
   /* For a screen < 960px, this CSS will be read */
   .card{
-    width:70%;
+    width:50%;
   }
 }
 
