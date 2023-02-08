@@ -34,7 +34,6 @@ body {
 }
 
 .card{
-  background-color: red;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
@@ -81,7 +80,6 @@ ul{
   /* For a screen > 960px, this CSS will be read */
   .card{
     width:50%;
-    background-color: yellow;
   }
 
 }
@@ -90,7 +88,6 @@ ul{
   /* For a screen < 960px, this CSS will be read */
   .card{
     width:70%;
-    background-color: green;
   }
 }
 
